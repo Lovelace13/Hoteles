@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Inicio Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <div class="content">
+      <ion-button class="actionbutton" expand="full" fill="clear" routerLink="/auth/signin" style="text-transform: none;">Iniciar Sesión</ion-button>
+      <ion-button class="fbbutton" expand="full" fill="clear"><b>Facebook</b></ion-button>
+      <ion-button class="googlebutton" expand="full" fill="clear"><b>Google</b></ion-button>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="line" size="4">
+  
+          </ion-col>
+          <ion-col size="5" style="text-align: center;">
+            Eres nuevo?
+          </ion-col>
+          <ion-col class="line" size="3">
+  
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button class="signupbutton" expand="full" fill="clear" routerLink="/auth/signup" style="text-transform: none;">Creacion de cuenta</ion-button>
+      <p style="text-align: center;font-size: small;color: grey;">Al crear una cuenta o iniciar sesión estas aceptando nuestros <a>Terminos y Condiciones</a> y <a>Politica de Privacidad</a></p>
+    </div>
+    
+    <!--
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3" class="ion-margin-top ion-margin-bottom">
+          <ion-list class="bg-transparent">
+            <ion-item color="none" lines="none">
+              <ion-input type="email" ngModel placeholder="Email" name="email" required email #emailCtrl="ngModel"></ion-input>
+            </ion-item>
+            <ion-item color="none" lines="none" *ngIf="!emailCtrl.valid && emailCtrl.touched">
+              <p>Should be a valid Address</p>
+            </ion-item>
+            <ion-item color="none" lines="none">
+              <ion-input type="password" ngModel placeholder="Contraseña" name="password" required minlength="6" #passwordCtrl="ngModel">
+              </ion-input>
+            </ion-item>
+            <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" color="none" lines="none">
+              <p>Debe tener al menos 6 dígitos</p>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          
+          
+          <ion-button type="submit" color="primary" (click)="onLogin()" expand="block">Inicio Sesión</ion-button>
+          <ion-button type="submit" color="primary" (click)="onLogin()" expand="block" [disabled]="!f.valid">Inicio Sesión
+          </ion-button>
+          
+          <span class="divider line one-line">or</span>
+          <ion-button type="button" color="primary" fill="clear" expand="block" routerLink="/auth/signup"><strong>Crear cuenta</strong></ion-button>
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    -->
+  </form>
+
+
+
+
+  <!--<div class="ion-text-center">
+    <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
+  </div> -->
+
+
+</ion-content>

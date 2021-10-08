@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información de Usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/user">atras</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+    <ion-card-header>
+      <!--
+      <ion-card-subtitle>Información personal</ion-card-subtitle>
+      -->
+      <ion-card-title><b>Información personal</b></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Título</ion-label>
+          <ion-select [(ngModel)]="user_title" name="select_title" placeholder="Sr/Sra">
+            <ion-select-option value="sr">Sr.</ion-select-option>
+            <ion-select-option value="sra">Sra.</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Nombres: </ion-label>
+          <ion-input ngModel placeholder="Nombres" [(ngModel)]="user_name" name="nombres" required nombres #nombresCtrl="ngModel"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Apellidos: </ion-label>
+          <ion-input ngModel placeholder="Apellidos" [(ngModel)]="user_lastname" name="apellidos" required apellidos #apellidosCtrl="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Género</ion-label>
+          <ion-select [(ngModel)]="user_gender" name="select_gender" placeholder="">
+            <ion-select-option value="m">Masculino</ion-select-option>
+            <ion-select-option value="f">Femenino</ion-select-option>
+            <ion-select-option value="ot">Otros</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fecha Nacimiento</ion-label>
+          
+          <ion-datetime display-format="DD-MM-YYYY" picker-format="YYYY MMM DD"
+          
+          value="1996-04-09T15:43:40.394Z"
+          name="datebirth" required></ion-datetime>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <!--
+      <ion-card-subtitle>Información personal</ion-card-subtitle>
+      -->
+      <ion-card-title><b>Contacto</b></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-label>Celular: </ion-label>
+          <ion-input ngModel placeholder="Apellidos" [(ngModel)]="user_phone" name="apellidos" required apellidos #apellidosCtrl="ngModel"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input ngModel placeholder="Apellidos" [(ngModel)]="user_address" name="apellidos" required apellidos #apellidosCtrl="ngModel"></ion-input>
+        </ion-item>
+        <ion-label>País/Region</ion-label>
+        <ion-item>
+          <ion-select [(ngModel)]="user_country" name="select_gender" placeholder="">
+            <ion-select-option value="EC">Ecuador</ion-select-option>
+          </ion-select>
+          <ion-input ngModel placeholder="Zip code" [(ngModel)]="user_zip" name="apellidos" required apellidos #apellidosCtrl="ngModel"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>Dirección de correo</b></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+          <ion-label>davidchang09@hotmail.com<br><ion-label style="font-size: small">Email confirmado</ion-label></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+        <a><ion-label style="font-size: large">Edita tu correo</ion-label></a>
+        </ion-item>
+        
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>
+
+

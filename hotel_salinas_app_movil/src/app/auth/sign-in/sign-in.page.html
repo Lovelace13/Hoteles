@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button style="color:white;" (click)="backEvent()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Hotel Salinas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="login-box-body">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Inicio Sesión</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="email" ngModel placeholder="Email" name="email" required email #emailCtrl="ngModel"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input type="password" ngModel placeholder="Contraseña" name="password" required minlength="6" #passwordCtrl="ngModel"></ion-input>
+          </ion-item>
+          <ion-button type="submit" color="primary" expand="block" [disabled]="!f.valid">Inicio Sesión</ion-button>
+          <a routerLink="/auth" class="small-text">Olvidaste tu contraseña?</a>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+
+  </form>
+</ion-content>

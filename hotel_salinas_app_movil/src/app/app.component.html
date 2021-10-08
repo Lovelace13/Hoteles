@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-menu side="start" menuId="m1">
+    <ion-header>
+      <ion-menu-toggle>
+        <ion-toolbar>
+          <ion-title routerLink="/user">
+            <b>Carlos Cunalata</b>
+          </ion-title>
+        </ion-toolbar>
+      </ion-menu-toggle>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Principal</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/bookings">
+            <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+            <ion-label>Mis Reservas</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" (click)="onLogout()" >
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Cerrar Sesión</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

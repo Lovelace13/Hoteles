@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'app.pages.editprofile.title.header' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile">
+  <ion-card class="ion-no-margin">
+    <ion-card-content class="bg-profile">
+      <img src="assets/img/avatar.jpg">
+      <h1 class="fw500">Carlos Cunalata</h1>
+      <h2 color="light" class="ion-margin-bottom">Customer</h2>
+      <ion-button icon-left color="secondary">
+        <ion-icon name="images" slot="start"></ion-icon> 
+        {{ 'app.label.edit' | translate }} / {{ 'app.label.insertavatar' | translate }}
+      </ion-button>
+    </ion-card-content>
+  
+    <ion-grid fixed class="ion-no-padding">
+      <ion-row>
+        <ion-col size="12" class="ion-padding">
+          <ion-list class="ion-margin-bottom">
+            <ion-list-header color="light">
+              <ion-label class="fw700">{{ 'app.label.userdata' | translate }}</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">{{ 'app.label.title' | translate }}:</ion-label>
+              <ion-select name="select_title" placeholder="Sr/Sra">
+                <ion-select-option value="sr">Sr.</ion-select-option>
+                <ion-select-option value="sra">Sra.</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">{{ 'app.label.fullname' | translate }}:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" value="Carlos Cunalata"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark" position="stacked">{{ 'app.label.email' | translate }}:</ion-label>
+              <ion-input inputmode="email" placeholder="Ex.: joe@doe.com" value="davidchang09@hotmail.com"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">{{ 'app.label.gender' | translate }}:</ion-label>
+              <ion-select name="select_gender" placeholder="">
+                <ion-select-option value="m">Masculino</ion-select-option>
+                <ion-select-option value="f">Femenino</ion-select-option>
+                <ion-select-option value="ot">Otros</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">{{ 'app.label.birth_date' | translate }}:</ion-label>
+              <ion-datetime display-format="DD-MM-YYYY" picker-format="YYYY MMM DD"
+              value="1996-04-09T15:43:40.394Z" name="datebirth" required>
+              </ion-datetime>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-list-header color="light">
+              <ion-label class="fw700">{{ 'app.label.contact_info' | translate }}</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+              <ion-select value="EC" name="select_country" placeholder="">
+                <ion-select-option value="EC">Ecuador</ion-select-option>
+              </ion-select>
+              <ion-input ngModel placeholder="Zip code" name="zipcode" zipcode #zipcodeCtrl="ngModel"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark">{{ 'app.label.city' | translate }}</ion-label>
+              <ion-select>
+                <ion-select-option value="nes">Guayaquil</ion-select-option>
+                <ion-select-option value="n64">Quito</ion-select-option>
+                <ion-select-option value="ps">Cuenca</ion-select-option>
+                <ion-select-option value="genesis">Machala</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">{{ 'app.label.address' | translate }}:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex.: Abey Road 5"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark">{{ 'app.label.phone_number' | translate }}</ion-label>
+              <ion-input ngModel placeholder=""  name="phoneNumber"  phoneNumber #phoneNumberCtrl="ngModel"></ion-input>
+            </ion-item>
+
+          </ion-list>
+
+          <ion-list>
+            <ion-list-header color="light">
+              <ion-label class="fw700">{{ 'app.label.email_address' | translate }}</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+              <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+              <ion-label>davidchang09@hotmail.com<br><ion-label style="font-size: small">Email confirmado</ion-label></ion-label>
+            </ion-item>
+            <ion-item>
+              <a><ion-label style="font-size: large">Edita tu correo</ion-label></a>
+            </ion-item>
+
+            
+
+          </ion-list>
+
+          <ion-list>
+            <ion-radio-group>
+              <ion-list-header color="light">
+                <ion-label class="fw700">{{ 'app.label.usertype' | translate }}</ion-label>
+              </ion-list-header>
+          
+              <ion-item>
+                <ion-label color="primary">Customer</ion-label>
+                <ion-radio slot="start" value="customer" checked></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label color="primary">Travel Agent</ion-label>
+                <ion-radio slot="start" value="agent"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+
+            <ion-item>
+              <ion-label class="text-1x">{{ 'app.pages.editprofile.avail.text' | translate }}</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          </ion-list>
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-button class="ion-no-margin" size="large" expand="full" color="dark" (click)="sendData()">{{ 'app.label.edit' | translate }}</ion-button>
+  </ion-card>
+  
+  <div class="ion-padding">
+    <ion-text color="dark" class="ion-no-margin">
+      Oceana 2020 - Ecuador,Todos los derechos reservador.
+    </ion-text>
+  </div>
+</ion-content>
