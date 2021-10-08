@@ -7,14 +7,11 @@ BACKEND PARA LA APP MOVIL DE HOTEL SALINAS
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### Integrantes ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Katiuska Marín S. 
+* Kevin Cevallos
+* Jaime Alarcon
 
 ### Contribution guidelines ###
 
