@@ -1,7 +1,0 @@
-{
-  "name": "ionbooking2",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
